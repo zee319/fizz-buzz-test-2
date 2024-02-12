@@ -13,13 +13,13 @@ namespace FizzBuzzTest_2
     }
     public class FizzRule : IRule
     {
-        public bool Matches(int number) => number % 3 == 0;
+        public bool Matches(int number) => number % 3 == 0 && number % 5 != 0;
         public string GetReplacement() => "Fizz";
     }
 
     public class BuzzRule : IRule
     {
-        public bool Matches(int number) => number % 5 == 0;
+        public bool Matches(int number) => number % 5 == 0 && number % 3 != 0;
         public string GetReplacement() => "Buzz";
     }
 
