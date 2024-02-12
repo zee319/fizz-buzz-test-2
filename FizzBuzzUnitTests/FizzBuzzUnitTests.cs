@@ -1,3 +1,4 @@
+using FizzBuzzTest_2;
 using FizzBuzzTest_2.Services;
 
 namespace FizzBuzzUnitTests
@@ -9,7 +10,13 @@ namespace FizzBuzzUnitTests
         [SetUp]
         public void Setup()
         {
-            fizzBuzzLogicService = new FizzBuzzLogicService();
+            var fizzRule = new FizzRule();
+            var buzzRule = new BuzzRule();
+            var fizzBuzzRule = new FizzBuzzRule();
+
+            var rules= new List<IRule> { fizzRule, buzzRule, fizzBuzzRule };
+
+            fizzBuzzLogicService = new FizzBuzzLogicService(rules);
         }
 
         [Test]
