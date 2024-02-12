@@ -8,19 +8,20 @@ namespace FizzBuzzTest_2.Services
 {
     public class FizzBuzzOutputService
     {
-        private readonly FizzBuzzLogicService fizzBuzzLogicService;
+        private readonly FizzBuzzLogicService _fizzBuzzLogicService;
 
-        public FizzBuzzOutputService(FizzBuzzLogicService fizzBuzzService)
+        public FizzBuzzOutputService(FizzBuzzLogicService fizzBuzzLogicService)
         {
-            this.fizzBuzzLogicService = fizzBuzzService;
+            _fizzBuzzLogicService = fizzBuzzLogicService ?? throw new ArgumentNullException(nameof(fizzBuzzLogicService));
         }
 
         public void OutputFizzBuzz(int start, int finish)
         {
             for (int i = start; i <= finish; i++)
             {
-                Console.WriteLine(fizzBuzzLogicService.GetFizzBuzz(i));
+                Console.WriteLine(_fizzBuzzLogicService.GetFizzBuzz(i));
             }
         }
+
     }
 }
