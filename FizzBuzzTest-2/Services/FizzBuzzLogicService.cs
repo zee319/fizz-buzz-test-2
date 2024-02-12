@@ -25,6 +25,7 @@ namespace FizzBuzzTest_2.Services
                     return rule.GetReplacement();
             }
             return n.ToString();
+
         }
     }
 }
